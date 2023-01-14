@@ -9,5 +9,5 @@
 - Custom Security
 - Multilingual (Multi Culture)
 - A lot of Custom Tag Helper
-- A log of Custom Html Helper
+- A lot of Custom Html Helper
 - CMS (Content Management System)
