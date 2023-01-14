@@ -1,0 +1,68 @@
+﻿@page
+@model Server.Pages.Admin.MenuItems.DetailsModel
+
+@{
+	@if (Model.ViewModel == null)
+	{
+		return;
+	}
+
+	var pageTitle =
+		Resources.PageTitles.MenuItemDetails;
+
+	ViewData["PageTitle"] = pageTitle;
+
+	if (System.Threading.Thread.CurrentThread.CurrentUICulture.TextInfo.IsRightToLeft)
+	{
+		Layout =
+			"Layouts/Rtl/_Layout";
+	}
+	else
+	{
+		Layout =
+			"Layouts/Ltr/_Layout";
+	}
+}
+
+<section-form>
+	<fieldset disabled>
+		<section-form-header>
+			@(pageTitle)
+		</section-form-header>
+
+		<partial name="PartialViews/_DisplayPageMessages" />
+
+		<dtat-readonly-input asp-for="ViewModel.Title" />
+
+		<dtat-readonly-input asp-for="ViewModel.ParentTitle" />
+
+		<dtat-readonly-input asp-for="ViewModel.Ordering" />
+
+		<dtat-readonly-input asp-for="ViewModel.Link" />
+
+		<dtat-readonly-input asp-for="ViewModel.Icon" />
+
+		<dtat-readonly-input asp-for="ViewModel.IconPosition" />
+
+		<dtat-readonly-checkbox asp-for="ViewModel.IsActive" />
+
+		<dtat-readonly-checkbox asp-for="ViewModel.IsPublic" />
+
+		<dtat-readonly-checkbox asp-for="ViewModel.IsUndeletable" />
+	</fieldset>
+
+	<section-form-footer>
+		<a asp-page="Index">
+			@(Html.DtatGetLinkCaptionForList())
+		</a>
+		<a asp-page="Update" asp-route-id="@(Model.ViewModel.Id)">
+			@(Html.DtatGetLinkCaptionForUpdate())
+		</a>
+		<a asp-page="Delete" asp-route-id="@(Model.ViewModel.Id)">
+			@(Html.DtatGetLinkCaptionForDelete())
+		</a>
+	</section-form-footer>
+</section-form>
+
+
+
