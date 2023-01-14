@@ -5,7 +5,7 @@
 - C# 10
 - .NET 7.0
 - Razor Pages
-- Bootstrap 5.2
+- Bootstrap 5.2.3
 - Custom Security
 - Multilingual (Multi Culture)
 - A lot of Custom Tag Helper
